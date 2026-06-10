@@ -1,0 +1,24 @@
+<div class="min-h-screen bg-(--bg-primary) text-(--text-primary)">
+
+  <app-project-header></app-project-header>
+
+  <!-- LAYOUT GLOBAL -->
+  <main class="max-w-5xl mx-auto p-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    <!-- SOMMAIRE -->
+    <aside class="md:col-span-1 sticky top-6 h-fit">
+
+      <app-project-toc class="space-y-2"></app-project-toc>
+
+    </aside>
+
+    <!-- CONTENU -->
+    <section class="md:col-span-3">
+      <app-project-content class="space-y-12"></app-project-content>
+    </section>
+
+  </main>
+
+  <app-project-footer></app-project-footer>
+
+</div>

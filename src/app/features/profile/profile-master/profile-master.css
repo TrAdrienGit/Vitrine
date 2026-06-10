@@ -1,7 +1,7 @@
 @reference "tailwindcss";
 
 .body_globaldisplay {
-  @apply max-w-5xl mx-auto p-6 text-white space-y-10;
+  @apply max-w-5xl mx-auto p-6 text-(--text-primary) space-y-10;
 }
 
 

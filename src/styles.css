@@ -1,7 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
 
-body {
-  @apply bg-neutral-950 bg-zinc-950;
+:root {
+  --bg-primary: #020618;
+  --bg-secondary: #1d293d;
 
+  --text-primary: #f1f5f9;
+  --text-secondary: #cad5e2;
+
+  --text-link: #51a2ff;
+
+}
+
+body {
+  @apply bg-(--bg-primary);
 }
