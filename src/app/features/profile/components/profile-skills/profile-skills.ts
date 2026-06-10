@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-profile-skills',
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './profile-skills.html',
   styleUrl: './profile-skills.css',
 })
-export class ProfileSkills {}
+export class ProfileSkills {
+  @Input() member!: any;
+}

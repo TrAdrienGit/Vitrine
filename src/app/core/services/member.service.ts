@@ -14,4 +14,7 @@ export class MemberService {
     return MEMBERS.find(m => m.id === id);
   }
 
+  getMemberBySlug(slug: string) {
+    return MEMBERS.find(m => m.slug === slug);
+  }
 }

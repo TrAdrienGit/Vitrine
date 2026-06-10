@@ -8,16 +8,9 @@
 
   <!-- Infos principales -->
   <div class="info">
-    <h1 class="nom_prenom">Nom Prénom</h1>
-
-    <p class="description">
-      Développeur passionné spécialisé en Angular et backend Java.
-      Ce texte sert de mini CV / présentation personnelle.
-    </p>
-
-    <p class="location">
-      📍 Paris, France
-    </p>
+    <h1 class="nom_prenom">{{member.lastName}} {{member.firstName}}</h1>
+    <p class="description">{{member.presentation}}</p>
+    <p class="location">📍 {{member.location}}</p>
   </div>
 
 </section>

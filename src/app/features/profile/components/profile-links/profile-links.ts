@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-profile-links',
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './profile-links.html',
   styleUrl: './profile-links.css',
 })
-export class ProfileLinks {}
+export class ProfileLinks {
+  @Input() member!: any;
+}
