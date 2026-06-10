@@ -5,37 +5,24 @@
 
   <div class="grid md:grid-cols-2 gap-6">
 
-    <!-- PROJECT CARD -->
-    <a href="/projects/1"
-       class="bg-(--bg-secondary) rounded-xl overflow-hidden hover:scale-105 transition">
+    @for (project of projects; track $index)
+    {
+      <!-- PROJECT CARD -->
+      <a href="/projects/1"
+         class="bg-(--bg-secondary) rounded-xl overflow-hidden hover:scale-105 transition">
 
-      <img src="assets/images/project_background_template.jpg"
-           class="h-40 w-full object-cover"
-           alt="project">
+        <img [src]=project.cover
+             class="h-40 w-full object-cover"
+             alt="project">
 
-      <div class="p-4 space-y-2">
-        <h3 class="text-xl font-bold">Nom du projet</h3>
-        <p class="text-sm text-(--text-secondary)">
-          Description courte du projet, objectifs et techno utilisées.
-        </p>
-      </div>
-    </a>
-
-    <!-- PROJECT CARD -->
-    <a href="/projects/2"
-       class="bg-(--bg-secondary) rounded-xl overflow-hidden hover:scale-105 transition">
-
-      <img src="assets/images/project_background_template.jpg"
-           class="h-40 w-full object-cover"
-           alt="project">
-
-      <div class="p-4 space-y-2">
-        <h3 class="text-xl font-bold">Deuxième projet</h3>
-        <p class="text-sm text-(--text-secondary)">
-          Description rapide du projet.
-        </p>
-      </div>
-    </a>
+        <div class="p-4 space-y-2">
+          <h3 class="text-xl font-bold">{{project.title}}</h3>
+          <p class="text-sm text-(--text-secondary)">
+            {{project.description}}
+          </p>
+        </div>
+      </a>
+    }
 
   </div>
 </section>

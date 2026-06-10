@@ -15,7 +15,7 @@ export const MEMBERS = [
       linkedin: "linkedin.com/in/username",
     },
     skills: ["Angular", "TypeScript", "Python", "Java"],
-    projects : ["ProjectID_01", "ProjectID_02", "ProjectID_03"],
+    projects : ["p1", "p1", "p1"],
     supplementary_link: [
       {
         text: "CV PDF",
@@ -44,7 +44,7 @@ export const MEMBERS = [
       linkedin: "linkedin.com/in/username",
     },
     skills: ["Angular", "TypeScript", "Python", "Java"],
-    projects : ["ProjectID_04", "ProjectID_05", "ProjectID_06", "ProjectID_07"],
+    projects : ["p1", "p1", "p1", "p1"],
     supplementary_link: [
       {
         text: "CV PDF",
