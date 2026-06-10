@@ -1,0 +1,38 @@
+<div class="fixed top-0 left-0 z-50 p-4">
+
+  <button
+    (click)="toggleMenu()"
+    class="cursor-pointer text-2xl text-(--text-secondary)"
+  > ☰ </button>
+
+  @if (isOpen()) {
+
+    <nav class="mt-3 w-64 rounded-xl border border-(--border-primary) bg-(--bg-secondary) p-4 shadow-lg">
+
+      <ul class="space-y-3 text-(--text-secondary)">
+
+        <li>
+          <a href="/">
+            Accueil
+          </a>
+        </li>
+
+        <li>
+          <a href="/contact">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+      <hr class="my-4 border-(--border-primary)">
+
+      <div class="text-slate-500">
+        Connexion (à venir)
+      </div>
+
+    </nav>
+
+  }
+
+</div>
