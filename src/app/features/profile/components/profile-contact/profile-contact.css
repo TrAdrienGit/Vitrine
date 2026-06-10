@@ -1,0 +1,9 @@
+@reference "tailwindcss";
+
+.section_contact {
+  @apply bg-slate-800 p-6 rounded-xl space-y-2;
+}
+
+.contact_text {
+  @apply text-2xl font-semibold;
+}

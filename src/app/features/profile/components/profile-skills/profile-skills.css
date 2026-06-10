@@ -1,0 +1,17 @@
+@reference "tailwindcss";
+
+.section_competences {
+  @apply space-y-2 p-6;
+}
+
+.competence_titre {
+  @apply text-2xl font-semibold;
+}
+
+.competence_list {
+  @apply flex flex-wrap gap-2;
+}
+
+.competence_div {
+  @apply bg-blue-600 px-3 py-1 rounded-full text-sm;
+}

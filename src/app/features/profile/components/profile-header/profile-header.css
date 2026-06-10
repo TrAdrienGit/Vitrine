@@ -1,0 +1,29 @@
+@reference "tailwindcss";
+
+.section_header_identite {
+  @apply flex flex-col md:flex-row items-center gap-6 p-6;
+}
+
+.avatar {
+  @apply w-32 h-32 rounded-full bg-gray-700 overflow-hidden overflow-hidden flex items-center justify-center;
+}
+
+.image {
+  @apply w-full h-full object-cover;
+}
+
+.info {
+  @apply space-y-2;
+}
+
+.nom_prenom {
+  @apply text-4xl font-bold;
+}
+
+.description {
+  @apply text-gray-300 max-w-xl;
+}
+
+.location {
+  @apply text-sm text-gray-400;
+}

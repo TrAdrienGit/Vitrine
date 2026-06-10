@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {Globaldisplay} from './shared/components/model/globaldisplay/globaldisplay';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Globaldisplay],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
