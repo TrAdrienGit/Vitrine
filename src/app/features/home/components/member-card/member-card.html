@@ -1,32 +1,29 @@
-<div
-  class="bg-(--bg-secondary)
-         rounded-xl
-         overflow-hidden
-         shadow-lg
-         hover:scale-105
-         transition"
->
+ <a [routerLink]="['/', member.id]">
 
-  <img
-    src="assets/images/profil_template.png"
-    alt="avatar"
-    class="h-64 w-full object-cover"
-  >
+  <div class="bg-(--bg-secondary) rounded-xl overflow-hidden shadow-lg hover:scale-105 transition">
 
-  <div class="p-5">
+    <img
+      [src]="member.avatar"
+      alt="avatar"
+      class="h-64 w-full object-cover"
+    >
 
-    <h2 class="text-xl font-bold">
-      Adrien Martin
-    </h2>
+    <div class="p-5">
 
-    <p class="mt-2 text-(--text-secondary)">
-      Développeur logiciel
-    </p>
+      <h2 class="text-xl font-bold">
+        {{member.firstName}} {{member.lastName}}
+      </h2>
 
-    <p class="mt-4 text-sm">
-      12 projets publiés
-    </p>
+      <p class="mt-2 text-(--text-secondary)">
+        {{member.job}}
+      </p>
+
+      <p class="mt-4 text-sm">
+        {{member.projects.length}} projets
+      </p>
+
+    </div>
 
   </div>
 
-</div>
+</a>

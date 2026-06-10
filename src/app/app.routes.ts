@@ -7,6 +7,6 @@ import {HomePage} from './features/home/home-page/home-page';
 export const routes: Routes = [
   {path: '', component: HomePage},
   {path: "contact", component: ContactPage},
-  {path: "PrenomNOM", component: ProfileMaster},
-  {path: "PrenomNOM/ProjectNAME", component: Project},
+  {path: ":member_id", component: ProfileMaster},
+  {path: ":member_id/ProjectNAME", component: Project},
 ];

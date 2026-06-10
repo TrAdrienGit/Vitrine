@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {MemberCard} from '../components/member-card/member-card';
+import { Component, inject } from '@angular/core';
+import { MemberCard } from '../components/member-card/member-card';
+import { MemberService } from '../../../core/services/member.service';
 
 @Component({
   selector: 'app-home-page',
@@ -9,4 +10,7 @@ import {MemberCard} from '../components/member-card/member-card';
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
-export class HomePage {}
+export class HomePage {
+  private memberService = inject(MemberService);
+  members = this.memberService.getMembers();
+}
