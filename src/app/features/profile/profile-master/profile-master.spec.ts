@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Globaldisplay } from './globaldisplay';
+import { ProfileMaster } from './profile-master';
 
-describe('Globaldisplay', () => {
-  let component: Globaldisplay;
-  let fixture: ComponentFixture<Globaldisplay>;
+describe('ProfileMaster', () => {
+  let component: ProfileMaster;
+  let fixture: ComponentFixture<ProfileMaster>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Globaldisplay],
+      imports: [ProfileMaster],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Globaldisplay);
+    fixture = TestBed.createComponent(ProfileMaster);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
