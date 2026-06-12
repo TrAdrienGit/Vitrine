@@ -2,28 +2,29 @@
 <header class="max-w-5xl mx-auto p-6 space-y-4">
 
   <img
-    src="assets/images/project_background_template.jpg"
+    [src]="project.cover"
     class="w-full h-64 object-cover rounded-xl"
     alt="cover"
   />
 
-  <h1 class="text-4xl font-bold">Nom du projet</h1>
+  <h1 class="text-4xl font-bold">{{project.title}}</h1>
 
   <p class="text-(--text-secondary)">
-    Description courte du projet : objectif, contexte, utilité.
+    {{project.description}}
   </p>
 
   <!-- TECH STACK -->
   <div class="flex flex-wrap gap-2">
-    <span class="px-3 py-1 bg-(--bg-secondary) rounded-full text-sm">Angular</span>
-    <span class="px-3 py-1 bg-(--bg-secondary) rounded-full text-sm">Tailwind</span>
-    <span class="px-3 py-1 bg-(--bg-secondary) rounded-full text-sm">TypeScript</span>
+    @for (stack_teck of project.stack; track $index) {
+      <span class="px-3 py-1 bg-(--bg-secondary) rounded-full text-sm">{{stack_teck}}</span>
+    }
   </div>
 
   <!-- LINKS -->
   <div class="flex gap-4 text-(--text-link)">
-    <a href="#">GitHub</a>
-    <a href="#">Live demo</a>
+    @for (link of project.supplementary_link; track $index) {
+      <a href="{{link.link}}">{{link.text}}</a>
+    }
   </div>
 
 </header>

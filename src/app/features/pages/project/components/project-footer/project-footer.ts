@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-project-footer',
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './project-footer.html',
   styleUrl: './project-footer.css',
 })
-export class ProjectFooter {}
+export class ProjectFooter {
+  @Input() project!: any;
+}

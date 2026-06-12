@@ -8,5 +8,5 @@ export const routes: Routes = [
   {path: '', component: HomePage},
   {path: "contact", component: ContactPage},
   {path: ":member_slug", component: ProfileMaster},
-  {path: ":member_slug/ProjectNAME", component: Project},
+  {path: ":member_slug/:project_id", component: Project},
 ];

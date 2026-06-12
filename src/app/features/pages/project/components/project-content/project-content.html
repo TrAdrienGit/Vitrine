@@ -1,55 +1,23 @@
-<!-- INTRO -->
-<div id="intro" class="space-y-3">
-  <h2 class="text-2xl font-semibold">Introduction</h2>
-  <p class="text-(--text-secondary) leading-relaxed">
-    Explication du projet, contexte, objectifs, problèmes résolus.
-  </p>
-</div>
+@for (block of project.blocks; track $index) {
+  <div class="space-y-3">
 
-<!-- ARCHITECTURE -->
-<div id="archi" class="space-y-3">
-  <h2 class="text-2xl font-semibold">Architecture</h2>
+    @if (block.type == "title") {
+      <h2 class="text-2xl font-semibold pt-8" [id]="block.toc_title">{{block.content}}</h2>
+    }
+    @if (block.type == "text") {
+      <p class="text-(--text-secondary) leading-relaxed">{{block.content}}</p>
+    }
+    @if (block.type == "image" || block.type == "gif") {
+      <img
+        [src]="block.content"
+        class="rounded-lg border bg-(--bg-secondary)"
+        alt="block_image"/>
+    }
+    @if (block.type == "video") {
+      <video controls class="rounded-lg w-full">
+        <source [src]="block.content" type="video/mp4">
+      </video>
+    }
 
-  <p class="text-(--text-secondary)">
-    Explication technique du projet.
-  </p>
-
-  <img
-    src="assets/images/project_background_template.jpg"
-    class="rounded-lg border bg-(--bg-secondary)"
-  />
-</div>
-
-<!-- FEATURES -->
-<div id="features" class="space-y-3">
-  <h2 class="text-2xl font-semibold">Fonctionnalités</h2>
-
-  <ul class="list-disc list-inside text-(--text-secondary) space-y-1">
-    <li>Auth utilisateur</li>
-    <li>CRUD projets</li>
-    <li>Dashboard admin</li>
-  </ul>
-</div>
-
-<!-- MEDIA -->
-<div id="media" class="space-y-4">
-  <h2 class="text-2xl font-semibold">Media</h2>
-
-  <img
-    src="https://picsum.photos/800/400"
-    class="rounded-lg"
-  />
-
-  <video controls class="rounded-lg w-full">
-    <source src="assets/demo.mp4" type="video/mp4">
-  </video>
-
-</div>
-
-<!-- CONCLUSION -->
-<div class="space-y-3">
-  <h2 class="text-2xl font-semibold">Conclusion</h2>
-  <p class="text-(--text-secondary)">
-    Ce que tu as appris / difficultés / suite du projet.
-  </p>
-</div>
+  </div>
+}
