@@ -8,7 +8,7 @@ import { ProjectFooter } from '../components/project-footer/project-footer';
 
 import { ProjectService } from '../../../../core/services/project.service';
 import { Project } from '../../../../core/models/project.model';
-import {Observable} from 'rxjs';
+import {catchError, Observable, of} from 'rxjs';
 import {AsyncPipe} from '@angular/common';
 
 @Component({
@@ -28,13 +28,18 @@ export class ProjectPage implements OnInit {
   private route: ActivatedRoute = inject(ActivatedRoute);
   private projectService: ProjectService = inject(ProjectService);
 
-  public project$!: Observable<Project>;
+  public project$!: Observable<Project | undefined>;
 
   ngOnInit(): void {
     const projectSlug = this.route.snapshot.paramMap.get('project_slug');
 
     if (!projectSlug) return;
 
-    this.project$ = this.projectService.getProjectBySlug(projectSlug);
+    this.project$ = this.projectService.getProjectBySlug(projectSlug).pipe(
+      catchError(err => {
+        console.error('Error loading members', err);
+        return of(undefined); //fallbacksafe ?
+      })
+    );
   }
 }

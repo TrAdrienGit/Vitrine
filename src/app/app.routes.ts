@@ -9,4 +9,5 @@ export const routes: Routes = [
   {path: "contact", component: ContactPage},
   {path: ":member_slug", component: ProfileMaster},
   {path: ":member_slug/:project_slug", component: ProjectPage},
+  {path: "**", loadComponent: () => import('./core/pages/not-found/not-found/not-found').then(m => m.NotFoundPage)},
 ];

@@ -10,12 +10,35 @@
       Découvrez nos projets, nos parcours et nos réalisations.
     </p>
 
-    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="mt-16">
 
-      <!-- cartes membres -->
-      @for (member of members$ | async; track member.id)
-      {
-        <app-member-card [member]="member"></app-member-card>
+      @if (members$ | async; as members) {
+
+        @if (members.length > 0) {
+
+          <div
+            class="grid gap-8"
+            [class.grid-cols-1]="members.length === 1"
+            [class.grid-cols-2]="members.length === 2"
+            [class.grid-cols-3]="members.length >= 3"
+            [class.place-items-center]="members.length === 1"
+          >
+            @for (member of members; track member.id) {
+              <app-member-card [member]="member" class="w-full max-w-sm mx-auto aspect-1/4"></app-member-card>
+            }
+          </div>
+
+        } @else {
+
+          <!-- MESSAGE CENTRÉ -->
+          <div class="flex justify-center items-center py-20">
+            <p class="text-red-400 text-center">
+              Aucun membre disponible ou erreur de chargement
+            </p>
+          </div>
+
+        }
+
       }
 
     </div>

@@ -1,10 +1,23 @@
 <div class="body_globaldisplay">
-  @if (member$ | async; as member)
+  @if (member$ | async; as member) {
+
+    @if (member) {
+
+      <app-profile-header [member]="member"></app-profile-header>
+      <app-profile-contact [member]="member"></app-profile-contact>
+      <app-profile-skills [member]="member"></app-profile-skills>
+      <app-profile-projects [member]="member"></app-profile-projects>
+      <app-profile-links [member]="member"></app-profile-links>
+
+    }
+  }
+  @else
   {
-    <app-profile-header [member]="member"></app-profile-header>
-    <app-profile-contact [member]="member"></app-profile-contact>
-    <app-profile-skills [member]="member"></app-profile-skills>
-    <app-profile-projects [member]="member"></app-profile-projects>
-    <app-profile-links [member]="member"></app-profile-links>
+    <!-- MESSAGE CENTRÉ -->
+    <div class="flex justify-center items-center py-20">
+      <p class="text-red-400 text-center">
+        Aucun membre correspondant ou erreur de chargement
+      </p>
+    </div>
   }
 </div>

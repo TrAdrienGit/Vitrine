@@ -2,7 +2,7 @@ import {Component, inject, OnInit} from '@angular/core';
 import { MemberCard } from '../components/member-card/member-card';
 import { MemberService } from '../../../core/services/member.service';
 import { Member } from '../../../core/models/member.model';
-import { Observable } from 'rxjs';
+import {catchError, Observable, of} from 'rxjs';
 import {AsyncPipe} from '@angular/common';
 
 @Component({
@@ -19,6 +19,11 @@ export class HomePage implements OnInit {
   public members$!: Observable<Member[]>;
 
   ngOnInit() {
-    this.members$ = this.memberService.getMembers();
+    this.members$ = this.memberService.getMembers().pipe(
+      catchError(err => {
+        console.error('Error loading members', err);
+        return of([]); //fallbacksafe ?
+      })
+    );
   }
 }

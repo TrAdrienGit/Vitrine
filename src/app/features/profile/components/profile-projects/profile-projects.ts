@@ -26,7 +26,6 @@ export class ProfileProjects implements OnChanges {
   constructor() {}
 
   ngOnChanges() {
-    console.log(this.member.projects);
     if (!this.member) return;
     this.projects$ = this.projectService.getProjectsByIds(this.member.projects);
   }

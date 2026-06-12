@@ -9,7 +9,7 @@ import { ProfileSkills } from '../components/profile-skills/profile-skills';
 
 import { MemberService } from '../../../core/services/member.service';
 import { Member } from '../../../core/models/member.model';
-import {filter, Observable} from 'rxjs';
+import {catchError, filter, Observable, of} from 'rxjs';
 import {AsyncPipe} from '@angular/common';
 
 @Component({
@@ -30,13 +30,18 @@ export class ProfileMaster implements OnInit {
   private route = inject(ActivatedRoute);
   private memberService = inject(MemberService);
 
-  public member$!: Observable<Member>;
+  public member$!: Observable<Member | undefined>;
 
   ngOnInit(): void {
     const slug = this.route.snapshot.paramMap.get('member_slug');
 
     if (!slug) return;
 
-    this.member$ = this.memberService.getMemberBySlug(slug);
+    this.member$ = this.memberService.getMemberBySlug(slug).pipe(
+      catchError(err => {
+        console.error(err);
+        return of(undefined);
+      })
+    );
   }
 }
