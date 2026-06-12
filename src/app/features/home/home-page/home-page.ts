@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MemberCard } from '../components/member-card/member-card';
 import { MemberService } from '../../../core/services/member.service';
+import { Member } from '../../../core/models/member.model';
 
 @Component({
   selector: 'app-home-page',
@@ -11,6 +12,6 @@ import { MemberService } from '../../../core/services/member.service';
   styleUrl: './home-page.css',
 })
 export class HomePage {
-  private memberService = inject(MemberService);
-  members = this.memberService.getMembers();
+  private memberService: MemberService = inject(MemberService);
+  members: Member[] = this.memberService.getMembers();
 }

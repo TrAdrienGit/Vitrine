@@ -6,6 +6,8 @@ import {ProjectFooter} from '../components/project-footer/project-footer';
 import {ActivatedRoute} from '@angular/router';
 import {MemberService} from '../../../../core/services/member.service';
 import {ProjectService} from '../../../../core/services/project.service';
+import {Member} from '../../../../core/models/member.model';
+import {Project} from '../../../../core/models/project.model';
 
 @Component({
   selector: 'app-project',
@@ -18,18 +20,18 @@ import {ProjectService} from '../../../../core/services/project.service';
   templateUrl: './project.html',
   styleUrl: './project.css',
 })
-export class Project {
-  private route = inject(ActivatedRoute);
+export class ProjectPage {
+  private route: ActivatedRoute = inject(ActivatedRoute);
 
-  private memberService = inject(MemberService);
-  public member: any;
-  private projectService = inject(ProjectService);
-  public project: any;
+  //private memberService: MemberService = inject(MemberService);
+  //public member: Member;
+  private projectService: ProjectService = inject(ProjectService);
+  public project?: Project;
 
   constructor() {
     const project_slug: string | null = this.route.snapshot.paramMap.get('project_slug');
-    this.project = this.projectService.getProjectBySlug(project_slug!);
 
-
+    if (!project_slug) return;
+    this.project = this.projectService.getProjectBySlug(project_slug);
   }
 }

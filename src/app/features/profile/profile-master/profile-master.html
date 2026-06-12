@@ -1,7 +1,10 @@
 <div class="body_globaldisplay">
-  <app-profile-header [member]="member"></app-profile-header>
-  <app-profile-contact [member]="member"></app-profile-contact>
-  <app-profile-skills [member]="member"></app-profile-skills>
-  <app-profile-projects [member]="member"></app-profile-projects>
-  <app-profile-links [member]="member"></app-profile-links>
+  @if (member)
+  {
+    <app-profile-header [member]="member"></app-profile-header>
+    <app-profile-contact [member]="member"></app-profile-contact>
+    <app-profile-skills [member]="member"></app-profile-skills>
+    <app-profile-projects [member]="member"></app-profile-projects>
+    <app-profile-links [member]="member"></app-profile-links>
+  }
 </div>

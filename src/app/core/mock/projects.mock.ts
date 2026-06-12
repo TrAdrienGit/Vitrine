@@ -1,4 +1,6 @@
-export const PROJECTS = [
+import { Project } from '../models/project.model';
+
+export const PROJECTS: Project[] = [
   {
     id: 'p1',
     title: 'Angular Vitrine',

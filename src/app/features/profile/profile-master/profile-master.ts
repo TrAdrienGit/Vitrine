@@ -6,6 +6,7 @@ import {ProfileProjects} from "../components/profile-projects/profile-projects";
 import {ProfileSkills} from "../components/profile-skills/profile-skills";
 import {MemberService} from '../../../core/services/member.service';
 import {ActivatedRoute} from '@angular/router';
+import {Member} from '../../../core/models/member.model';
 
 @Component({
   selector: 'app-profile-master',
@@ -21,13 +22,14 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ProfileMaster {
 
-  private route = inject(ActivatedRoute);
-  private memberService = inject(MemberService);
+  private route: ActivatedRoute = inject(ActivatedRoute);
+  private memberService: MemberService = inject(MemberService);
 
-  public member: any;
+  public member?: Member;
 
   constructor() {
     const slug: string | null = this.route.snapshot.paramMap.get('member_slug');
+    if (!slug) return;
     this.member = this.memberService.getMemberBySlug(slug!);
   }
 }
