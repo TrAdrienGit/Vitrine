@@ -39,6 +39,21 @@
 
         }
 
+
+      }
+      @else {
+        <!-- LOADING STATE -->
+        <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+          @for (i of [1,2,3]; track i) {
+            <div class="w-full max-w-sm mx-auto animate-pulse">
+              <div class="h-64 bg-(--bg-secondary) rounded-xl"></div>
+              <div class="h-4 mt-4 bg-(--bg-secondary) rounded w-3/4"></div>
+              <div class="h-4 mt-2 bg-(--bg-secondary) rounded w-1/2"></div>
+            </div>
+          }
+
+        </div>
       }
 
     </div>

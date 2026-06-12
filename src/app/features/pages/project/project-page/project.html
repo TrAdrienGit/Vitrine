@@ -23,12 +23,20 @@
     <app-project-footer [project]="project"></app-project-footer>
   }
   @else {
-    <!-- MESSAGE CENTRÉ -->
+    <!-- LOADING -->
+    <div class="animate-pulse p-6 space-y-6">
+
+      <div class="h-48 bg-(--bg-secondary) rounded-xl"></div>
+      <div class="h-6 w-1/2 bg-(--bg-secondary) rounded"></div>
+
+    </div>
+
+    <!-- MESSAGE CENTRÉ
     <div class="flex justify-center items-center py-20">
       <p class="text-red-400 text-center">
         Aucun projet correspondant ou erreur de chargement
       </p>
-    </div>
+    </div>-->
   }
 
 
