@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import {Component, signal} from '@angular/core';
 import {RouterLink} from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import {RouterLink} from '@angular/router';
   standalone: true,
   templateUrl: './navbar.html',
   imports: [
-    RouterLink
+    RouterLink,
   ],
   styleUrl: './navbar.css'
 })
@@ -17,4 +17,8 @@ export class Navbar {
   toggleMenu(): void {
     this.isOpen.update(value => !value);
   }
+
+
+
+
 }

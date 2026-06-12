@@ -11,6 +11,7 @@ import { MemberService } from '../../../core/services/member.service';
 import { Member } from '../../../core/models/member.model';
 import {catchError, filter, Observable, of} from 'rxjs';
 import {AsyncPipe} from '@angular/common';
+import {BackButton} from '../../../shared/components/button/back-button/back-button';
 
 @Component({
   selector: 'app-profile-master',
@@ -20,7 +21,8 @@ import {AsyncPipe} from '@angular/common';
     ProfileLinks,
     ProfileProjects,
     ProfileSkills,
-    AsyncPipe
+    AsyncPipe,
+    BackButton
   ],
   templateUrl: './profile-master.html',
   styleUrl: './profile-master.css',

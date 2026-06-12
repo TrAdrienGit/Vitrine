@@ -1,4 +1,9 @@
+
 <div class="min-h-screen bg-(--bg-primary) text-(--text-primary)">
+
+  <div class="fixed top-20 left-1/2 translate-x-[-50%] z-40 w-full max-w-6xl px-6">
+    <app-back-button></app-back-button>
+  </div>
 
   @if (project$ | async; as project) {
     <app-project-header [project]="project"></app-project-header>

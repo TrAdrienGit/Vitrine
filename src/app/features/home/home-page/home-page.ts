@@ -4,12 +4,14 @@ import { MemberService } from '../../../core/services/member.service';
 import { Member } from '../../../core/models/member.model';
 import {catchError, Observable, of} from 'rxjs';
 import {AsyncPipe} from '@angular/common';
+import {BackButton} from '../../../shared/components/button/back-button/back-button';
 
 @Component({
   selector: 'app-home-page',
   imports: [
     MemberCard,
-    AsyncPipe
+    AsyncPipe,
+    BackButton
   ],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',

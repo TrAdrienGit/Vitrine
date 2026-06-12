@@ -10,6 +10,7 @@ import { ProjectService } from '../../../../core/services/project.service';
 import { Project } from '../../../../core/models/project.model';
 import {catchError, Observable, of} from 'rxjs';
 import {AsyncPipe} from '@angular/common';
+import {BackButton} from '../../../../shared/components/button/back-button/back-button';
 
 @Component({
   selector: 'app-project',
@@ -18,7 +19,8 @@ import {AsyncPipe} from '@angular/common';
     ProjectToc,
     ProjectContent,
     ProjectFooter,
-    AsyncPipe
+    AsyncPipe,
+    BackButton
   ],
   templateUrl: './project.html',
   styleUrl: './project.css',
