@@ -8,7 +8,7 @@
     @for (project of projects; track $index)
     {
       <!-- PROJECT CARD -->
-      <a href="/{{member.slug}}/{{project.id}}"
+      <a [routerLink]="['/', member.slug, projectService.slugify(project.title)]"
          class="bg-(--bg-secondary) rounded-xl overflow-hidden hover:scale-105 transition">
 
         <img [src]=project.cover

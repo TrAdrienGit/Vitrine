@@ -18,4 +18,16 @@ export class ProjectService {
     return PROJECTS.filter(p => p.ownerId === ownerId);
   }
 
+  slugify(title: string): string {
+    return title
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, '-');
+  }
+
+  getProjectBySlug(slug: string) {
+    return PROJECTS.find(
+      project => this.slugify(project.title) === slug
+    );
+  }
 }

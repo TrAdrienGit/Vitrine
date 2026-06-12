@@ -27,8 +27,8 @@ export class Project {
   public project: any;
 
   constructor() {
-    const project_id: string | null = this.route.snapshot.paramMap.get('project_id');
-    this.project = this.projectService.getProjectById(project_id!);
+    const project_slug: string | null = this.route.snapshot.paramMap.get('project_slug');
+    this.project = this.projectService.getProjectBySlug(project_slug!);
 
 
   }
