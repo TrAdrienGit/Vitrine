@@ -46,7 +46,7 @@ export const MEMBERS: Member[] = [
       linkedin: "linkedin.com/in/username",
     },
     skills: ["Angular", "TypeScript", "Python", "Java"],
-    projects : ["p1", "p2", "p1", "p2"],
+    projects : ["p1", "p2", "p3", "p4"],
     supplementary_link: [
       {
         text: "CV PDF",

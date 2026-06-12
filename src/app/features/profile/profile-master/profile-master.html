@@ -1,5 +1,5 @@
 <div class="body_globaldisplay">
-  @if (member)
+  @if (member$ | async; as member)
   {
     <app-profile-header [member]="member"></app-profile-header>
     <app-profile-contact [member]="member"></app-profile-contact>

@@ -5,24 +5,29 @@
 
   <div class="grid md:grid-cols-2 gap-6">
 
-    @for (project of projects; track $index)
-    {
-      <!-- PROJECT CARD -->
-      <a [routerLink]="['/', member.slug, projectService.slugify(project.title)]"
-         class="bg-(--bg-secondary) rounded-xl overflow-hidden hover:scale-105 transition">
+    @if (projects$ | async; as projects) {
 
-        <img [src]=project.cover
-             class="h-40 w-full object-cover"
-             alt="project">
+      @for (project of projects; track $index)
+      {
+        <!-- PROJECT CARD -->
+        <a [routerLink]="['/', member.slug, projectService.slugify(project.title)]"
+           class="bg-(--bg-secondary) rounded-xl overflow-hidden hover:scale-105 transition">
 
-        <div class="p-4 space-y-2">
-          <h3 class="text-xl font-bold">{{project.title}}</h3>
-          <p class="text-sm text-(--text-secondary)">
-            {{project.description}}
-          </p>
-        </div>
-      </a>
+          <img [src]=project.cover
+               class="h-40 w-full object-cover"
+               alt="project">
+
+          <div class="p-4 space-y-2">
+            <h3 class="text-xl font-bold">{{project.title}}</h3>
+            <p class="text-sm text-(--text-secondary)">
+              {{project.description}}
+            </p>
+          </div>
+        </a>
+      }
+
     }
+
 
   </div>
 </section>

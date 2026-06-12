@@ -1,17 +1,24 @@
-import { Component, inject } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import { MemberCard } from '../components/member-card/member-card';
 import { MemberService } from '../../../core/services/member.service';
 import { Member } from '../../../core/models/member.model';
+import { Observable } from 'rxjs';
+import {AsyncPipe} from '@angular/common';
 
 @Component({
   selector: 'app-home-page',
   imports: [
-    MemberCard
+    MemberCard,
+    AsyncPipe
   ],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
-export class HomePage {
+export class HomePage implements OnInit {
   private memberService: MemberService = inject(MemberService);
-  members: Member[] = this.memberService.getMembers();
+  public members$!: Observable<Member[]>;
+
+  ngOnInit() {
+    this.members$ = this.memberService.getMembers();
+  }
 }

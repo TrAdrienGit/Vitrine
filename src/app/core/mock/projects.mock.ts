@@ -80,6 +80,92 @@ export const PROJECTS: Project[] = [
       { type: 'gif', toc_title: "", content: 'assets/images/project_background_template.jpg' },
       { type: 'video', toc_title: "", content: 'assets/images/project_background_template.jpg' },
     ]
+  },
+
+  {
+    id: 'p3',
+    title: 'Test Project p3',
+    description: 'Description de test pour p3',
+    cover: 'assets/images/project_background_template.jpg',
+    stack: ['JS', 'Python'],
+    ownerId: '1',
+    supplementary_link: [
+      {
+        text: "GitHub",
+        link: "https://example.com/",
+      },
+      {
+        text: "Live demo",
+        link: "https://example.com/",
+      },
+      {
+        text: "Test line 3",
+        link: "https://example.com/",
+      }
+    ],
+
+    blocks: [
+      { type: 'title', toc_title: "Introduction", content: 'Introduction' },
+      { type: 'text', toc_title: "", content: 'Explication du projet, contexte, objectifs, problèmes résolus.' },
+
+      { type: 'title', toc_title: "Fonctionnalités", content: 'Fonctionnalités' },
+      { type: 'text', toc_title: "", content: 'Explication du projet, contexte, objectifs, problèmes résolus.' },
+      { type: 'text', toc_title: "", content: 'Explication du projet, contexte, objectifs, problèmes résolus.' },
+      { type: 'text', toc_title: "", content: 'Explication du projet, contexte, objectifs, problèmes résolus.' },
+
+      { type: 'title', toc_title: "Chapitre 1 Test", content: 'Chapitre 1 Test' },
+      { type: 'image', toc_title: "", content: 'assets/images/project_background_template.jpg' },
+      { type: 'gif', toc_title: "", content: 'assets/images/project_background_template.jpg' },
+      { type: 'video', toc_title: "", content: 'assets/images/project_background_template.jpg' },
+
+      { type: 'title', toc_title: "Chapitre 2 Test", content: 'Chapitre 2 Test' },
+      { type: 'image', toc_title: "", content: 'assets/images/project_background_template.jpg' },
+      { type: 'gif', toc_title: "", content: 'assets/images/project_background_template.jpg' },
+      { type: 'video', toc_title: "", content: 'assets/images/project_background_template.jpg' },
+    ]
+  },
+
+  {
+    id: 'p4',
+    title: 'Test Project p4',
+    description: 'Description de test pour p4',
+    cover: 'assets/images/project_background_template.jpg',
+    stack: ['JS', 'Python'],
+    ownerId: '1',
+    supplementary_link: [
+      {
+        text: "GitHub",
+        link: "https://example.com/",
+      },
+      {
+        text: "Live demo",
+        link: "https://example.com/",
+      },
+      {
+        text: "Test line 3",
+        link: "https://example.com/",
+      }
+    ],
+
+    blocks: [
+      { type: 'title', toc_title: "Introduction", content: 'Introduction' },
+      { type: 'text', toc_title: "", content: 'Explication du projet, contexte, objectifs, problèmes résolus.' },
+
+      { type: 'title', toc_title: "Fonctionnalités", content: 'Fonctionnalités' },
+      { type: 'text', toc_title: "", content: 'Explication du projet, contexte, objectifs, problèmes résolus.' },
+      { type: 'text', toc_title: "", content: 'Explication du projet, contexte, objectifs, problèmes résolus.' },
+      { type: 'text', toc_title: "", content: 'Explication du projet, contexte, objectifs, problèmes résolus.' },
+
+      { type: 'title', toc_title: "Chapitre 1 Test", content: 'Chapitre 1 Test' },
+      { type: 'image', toc_title: "", content: 'assets/images/project_background_template.jpg' },
+      { type: 'gif', toc_title: "", content: 'assets/images/project_background_template.jpg' },
+      { type: 'video', toc_title: "", content: 'assets/images/project_background_template.jpg' },
+
+      { type: 'title', toc_title: "Chapitre 2 Test", content: 'Chapitre 2 Test' },
+      { type: 'image', toc_title: "", content: 'assets/images/project_background_template.jpg' },
+      { type: 'gif', toc_title: "", content: 'assets/images/project_background_template.jpg' },
+      { type: 'video', toc_title: "", content: 'assets/images/project_background_template.jpg' },
+    ]
   }
 ];
 

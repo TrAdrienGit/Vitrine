@@ -1,13 +1,15 @@
-import {Component, inject} from '@angular/core';
-import {ProjectHeader} from '../components/project-header/project-header';
-import {ProjectToc} from '../components/project-toc/project-toc';
-import {ProjectContent} from '../components/project-content/project-content';
-import {ProjectFooter} from '../components/project-footer/project-footer';
-import {ActivatedRoute} from '@angular/router';
-import {MemberService} from '../../../../core/services/member.service';
-import {ProjectService} from '../../../../core/services/project.service';
-import {Member} from '../../../../core/models/member.model';
-import {Project} from '../../../../core/models/project.model';
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { ProjectHeader } from '../components/project-header/project-header';
+import { ProjectToc } from '../components/project-toc/project-toc';
+import { ProjectContent } from '../components/project-content/project-content';
+import { ProjectFooter } from '../components/project-footer/project-footer';
+
+import { ProjectService } from '../../../../core/services/project.service';
+import { Project } from '../../../../core/models/project.model';
+import {Observable} from 'rxjs';
+import {AsyncPipe} from '@angular/common';
 
 @Component({
   selector: 'app-project',
@@ -15,23 +17,24 @@ import {Project} from '../../../../core/models/project.model';
     ProjectHeader,
     ProjectToc,
     ProjectContent,
-    ProjectFooter
+    ProjectFooter,
+    AsyncPipe
   ],
   templateUrl: './project.html',
   styleUrl: './project.css',
 })
-export class ProjectPage {
+export class ProjectPage implements OnInit {
+
   private route: ActivatedRoute = inject(ActivatedRoute);
-
-  //private memberService: MemberService = inject(MemberService);
-  //public member: Member;
   private projectService: ProjectService = inject(ProjectService);
-  public project?: Project;
 
-  constructor() {
-    const project_slug: string | null = this.route.snapshot.paramMap.get('project_slug');
+  public project$!: Observable<Project>;
 
-    if (!project_slug) return;
-    this.project = this.projectService.getProjectBySlug(project_slug);
+  ngOnInit(): void {
+    const projectSlug = this.route.snapshot.paramMap.get('project_slug');
+
+    if (!projectSlug) return;
+
+    this.project$ = this.projectService.getProjectBySlug(projectSlug);
   }
 }

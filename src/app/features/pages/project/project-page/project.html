@@ -1,6 +1,6 @@
 <div class="min-h-screen bg-(--bg-primary) text-(--text-primary)">
 
-  @if (project) {
+  @if (project$ | async; as project) {
     <app-project-header [project]="project"></app-project-header>
 
     <!-- LAYOUT GLOBAL -->
